@@ -7,6 +7,8 @@
 
 void llpivot (Node*& head, Node*& smaller, Node*& larger, int pivot) {
   if(!head) {
+    smaller = nullptr;
+    larger = nullptr;
     return;
   }
   Node* nextNode = head->next;
@@ -21,4 +23,5 @@ void llpivot (Node*& head, Node*& smaller, Node*& larger, int pivot) {
     larger->next = nullptr;
     llpivot(nextNode, smaller, larger->next, pivot);
   }
+  head = nullptr;
 }

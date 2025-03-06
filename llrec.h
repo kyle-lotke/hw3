@@ -89,7 +89,7 @@ Node* llfilter(Node* head, Comp pred)
       return nullptr;
     }
     Node* next_filtered_node = llfilter(head->next, pred); // go to end of ll
-    if(pred(head->val)) { // if the comp is true on current val, link the current to past node
+    if(!pred(head->val)) { // if the comp is true on current val, link the current to past node
       head->next = next_filtered_node;
       return head; // return it for next comp
     }
