@@ -66,9 +66,16 @@ void dealloc(Node* head)
 //   Add any helper functions or
 //   function object struct declarations
 // -----------------------------------------------
-
-
-
+struct odd {
+  bool operator()(int val) {
+    return val % 2 == 1; // return true if val is odd
+  }
+};
+struct even {
+  bool operator()(int val) {
+    return val % 2 == 0; // return true if val is odd
+  }
+};
 
 
 int main(int argc, char* argv[])
@@ -86,6 +93,12 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+    // needs to be fixed
+    print(llfilter(head, odd())); // works
+
+    head = readList(argv[1]);
+
+    print(llfilter(head, even())); //works
 
 
 

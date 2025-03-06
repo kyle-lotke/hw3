@@ -21,6 +21,12 @@ class Gate
 			char m_current_state;
 };
 
+class NotGate : public Gate {
+  public:
+    NotGate(Wire*, Wire*);
+    Event* update(uint64_t);
+};
+
 class And2Gate : public Gate
 {
   public:
